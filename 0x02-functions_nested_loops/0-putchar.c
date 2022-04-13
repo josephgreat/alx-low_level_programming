@@ -1,6 +1,6 @@
 /*main.c*/
 #include "main.h"
-
+/* prints _putchar*/
 int main(void)
 {
 	_putchar('_');
