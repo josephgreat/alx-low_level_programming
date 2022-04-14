@@ -1,6 +1,13 @@
-/*main.c*/
+/**
+ * Description:  A file that prints _putchar
+ * File: 0-putchar.c
+ */
 #include "main.h"
-/* prints _putchar*/
+/**
+ * main - writes "_putchar"
+ *
+ * Return: Always 0.
+*/
 int main(void)
 {
 	_putchar('_');
