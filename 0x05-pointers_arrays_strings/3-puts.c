@@ -15,7 +15,7 @@ void _puts(char *str)
 	while (*strch++)
 		;
 
-	strlength = strch - str - 1;
+	strlength = strch - str;
 
 	for (index = 0; index < strlength; index++)
 		_putchar(str[index]);
