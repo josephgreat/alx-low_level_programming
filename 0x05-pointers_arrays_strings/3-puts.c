@@ -8,15 +8,11 @@
 
 void _puts(char *str)
 {
-	char *strch = str;
-	int strlength;
-	int index;
+	char *t = str;
 
-	while (*strch++)
-		;
-
-	strlength = strch - str;
-
-	for (index = 0; index < strlength; index++)
-		_putchar(str[index]);
+	while (*t != '\0')
+	{
+		_putchar(*t);
+		t++;
+	}
 }
