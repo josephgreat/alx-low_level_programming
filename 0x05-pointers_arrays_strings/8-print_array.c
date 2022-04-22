@@ -3,7 +3,7 @@
 
 /**
  * print_array - prints the elements in array, seperated by comma
- * @array: string
+ * @a: string
  * @n: length of array
  * Return: nothing
  */
@@ -15,8 +15,8 @@ void print_array(int *a, int n)
 	while (i < n)
 	{
 		if (i < n - 1)
-			printf("%d,", *(a + i));
-		else 
+			printf("%d, ", *(a + i));
+		else
 			printf("%d\n", *(a + i));
 		i++;
 	}
