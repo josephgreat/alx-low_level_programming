@@ -10,7 +10,7 @@ void puts2(char *str)
 {
 	char *t = str;
 
-	while (*t != '\0')
+	while (*t != '\0' && *t != '.')
 	{
 		_putchar(*t);
 		t += 2;
