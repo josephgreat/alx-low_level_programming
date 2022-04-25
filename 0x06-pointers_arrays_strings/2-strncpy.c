@@ -13,6 +13,7 @@ char *_strncpy(char *dest, char *src, int n)
 	char *srctemp = src;
 	char *desttemp = dest;
 	int destlen, srclen, i;
+	char *c = "";
 
 	while (*srctemp++)
 		;
@@ -25,11 +26,14 @@ char *_strncpy(char *dest, char *src, int n)
 
 	while (i < n)
 	{
-		*(dest + i) = *(src + i);
+		if (i > srclen - 1)
+			*(dest + i) = *c;
+		else
+			*(dest + i) = *(src + i);
 		destlen++;
 		i++;
 	}
-	destlen = srclen - 1;
+	*(dest + destlen) = '\0';
 
 	return (dest);
 }
