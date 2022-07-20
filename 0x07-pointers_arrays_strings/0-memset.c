@@ -4,7 +4,7 @@
  * *_memset - fills the first n bytes of the s array with b
  * @s: array to be refilled
  * @b: string for refilling
- * @n: number of bytes to be refilled
+ * @n: number of bytes to be refilleddd
  * Return: pointer to the memory area s
  */
 char *_memset(char *s, char b, unsigned int n)
