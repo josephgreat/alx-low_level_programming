@@ -8,14 +8,8 @@
  * Return: 0
  */
 
-int main(int argc, char **argv)
+int main(int __attribute__((__unused__)) argc, char **argv)
 {
-	if (argc)
-	{
-		printf("%s\n", argv[0]);
-		exit(EXIT_SUCCESS);
-	}
-	else
-		exit(EXIT_FAILURE);
+	printf("%s\n", argv[0]);
 	return (0);
 }
