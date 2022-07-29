@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * main - name of file
+ * main - print the name of the file
  * @argc: argument count
  * @argv: argument array
- * Return: 0
+ * Return: always 0
  */
 
 int main(int __attribute__((unused)) argc, char **argv)
