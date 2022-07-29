@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - print the number of argumnets passed
  * @argc: argument count
@@ -9,6 +9,7 @@
 
 int main(int argc, char __attribute__((__unused__)) **argv)
 {
-	printf("%d\n", argc);
+	_putchar('0' + argc);
+	_putchar('\n');
 	return (0);
 }
