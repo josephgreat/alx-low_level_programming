@@ -1,6 +1,7 @@
 #include "main.h"
 
-/**main - name of file
+/**
+ * main - name of file
  * @argc: argument count
  * @argv: argument array
  * Return: 0
