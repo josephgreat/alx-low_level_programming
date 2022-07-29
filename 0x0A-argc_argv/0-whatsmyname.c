@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * main - name of file
@@ -7,13 +8,8 @@
  * Return: 0
  */
 
-int main(int __attribute__((__unused__)) argc, char **argv)
+int main(int __attribute__((unused)) argc, char **argv)
 {
-	while (*argv[0])
-	{
-		_putchar(*argv[0]);
-		argv[0]++;
-	}
-	_putchar('\n');
+	printf("%s\n", argv[0]);
 	return (0);
 }
