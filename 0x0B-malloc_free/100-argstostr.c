@@ -24,7 +24,7 @@ char *argstostr(int ac, char **av)
 			j++;
 		totallen += j;
 	}
-	totallen += ac;
+	totallen += ac + 1;
 	newstr = malloc(sizeof(char) * totallen);
 
 	if (newstr == NULL)
