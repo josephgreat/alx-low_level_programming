@@ -13,15 +13,14 @@ char *str_concat(char *s1, char *s2)
 	char *newstr;
 	int s1len = 0, s2len = 0, i = 0, j = 0, len;
 
-	if (s1 == NULL && s2)
-		return (s2);
-	else if (s1 && s2 == NULL)
-		return (s1);
-	else if (s1 == NULL && s2 == NULL)
-		return ("");
-	while (s1[s1len])
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	while (s1[s1len] != '\0')
 		s1len++;
-	while (s2[s2len])
+	while (s2[s2len] != '\0')
 		s2len++;
 
 	len = s1len + s2len + 1;
@@ -30,7 +29,8 @@ char *str_concat(char *s1, char *s2)
 
 	if (!newstr)
 		return (NULL);
-	while (i < len)
+
+	while (i <= len)
 	{
 		if (i < s1len)
 			*(newstr + i) = *(s1 + i);
