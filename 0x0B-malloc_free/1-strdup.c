@@ -9,12 +9,20 @@
 
 char *_strdup(char *str)
 {
-	char *newstr = malloc(sizeof(str));
-	unsigned long int i = 0;
+	char *newstr, *tmp = str;
+	int i = 0, len = 0;
+
+	while (*tmp != '\0')
+	{
+		tmp++;
+	}
+	len = tmp - str;
+
+	newstr = malloc(len);
 
 	if (!newstr || str == NULL)
 		return (NULL);
-	while (i < sizeof(str))
+	while (i < len)
 	{
 		*(newstr + i) = *(str + i);
 		i++;
