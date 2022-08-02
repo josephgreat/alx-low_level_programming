@@ -5,6 +5,7 @@
 /**
  * print_dog - prints the value of the dog prototype
  * @d: dog prototype
+ * Return: nothing
  */
 
 void print_dog(struct dog *d)
@@ -24,4 +25,6 @@ void print_dog(struct dog *d)
 		else
 			printf("Owner: (nil)\n");
 	}
+	else
+		return;
 }
