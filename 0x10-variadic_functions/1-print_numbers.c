@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
+
 /**
  * print_numbers - print the numbers from a variadic call
  * @separator: numbers divider
