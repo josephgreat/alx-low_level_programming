@@ -34,4 +34,5 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		else
 			printf("%d\n", num);
 	}
+	va_end(nums_list);
 }
