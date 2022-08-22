@@ -17,20 +17,21 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char buf[1024];
+	char *buf = malloc(sizeof(char) * letters);
 	int fd, nlettersread, nletterswritten;
 
 	if (filename == NULL)
 		return (0);
 
-	fd = open(filename, O_RDWR);
+	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 		return (0);
 
 	nlettersread = read(fd, buf, letters);
 	if (nlettersread < 0)
 		return (0);
-
+	
+	buf[nlettersread] = '\0';
 	nletterswritten = write(STDOUT_FILENO, buf, nlettersread);
 	if (nletterswritten < nlettersread)
 		return (0);
