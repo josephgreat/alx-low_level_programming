@@ -69,26 +69,24 @@ void cp(char *src, char *des)
 
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
-	{
 		fd_close(fdsrc);
-		return;
-	}
+
 	nread = read(fdsrc, buffer, 1024);
 	error_check(fdsrc, src, 98, "Error: Can't read from file", fddes, fdsrc);
 
 	while (nread > 0)
-	{	
+	{
 		nwrite = write(fddes, buffer, nread);
 		if (nwrite != nread)
 		{
 			free(buffer);
 			nwrite = -1;
-			return;
 		}
 		error_check(fddes, des, 99, "Error: Can't write to", fddes, fdsrc);
-			
+
 		nread = read(fdsrc, buffer, 1024);
 		error_check(fdsrc, src, 98, "Error: Can't read from file", fddes, fdsrc);
+
 		fddes = open(des, O_WRONLY | O_APPEND);
 		error_check(fddes, des, 99, "Error: Can't write to", fddes, fdsrc);
 	}
