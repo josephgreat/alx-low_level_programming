@@ -16,7 +16,7 @@ void fd_close(int fd)
 
 	if (cl == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
@@ -35,7 +35,7 @@ void error_check(int check, char *file, int code,
 {
 	if (check == -1)
 	{
-		dprintf(STDOUT_FILENO, "%s %s\n", errortxt, file);
+		dprintf(STDERR_FILENO, "%s %s\n", errortxt, file);
 
 		if (fddes != -1)
 			fd_close(fddes);
@@ -106,7 +106,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 3)
 	{
-		dprintf(STDOUT_FILENO, "Usage: %s file_from file_to\n", argv[0]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
