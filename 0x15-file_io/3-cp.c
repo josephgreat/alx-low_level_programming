@@ -89,16 +89,16 @@ void cp(char *src, char *des)
 
 	file_perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	fddes = open(des, O_WRONLY | O_CREAT | O_TRUNC, file_perm);
-	error_check(fddes, des, 99, "Error: Can't write to", fddes,
-			fdsrc, buffer);
-
 	nread = read(fdsrc, buffer, 1024);
-	error_check(fdsrc, src, 98, "Error: Can't read from file", fddes,
-			fdsrc, buffer);
 
 	while (nread > 0)
 	{
-		nwrite = write(fddes, buffer, nread);
+		error_check(fddes, des, 99, "Error: Can't write to", fddes,
+			fdsrc, buffer);
+		error_check(fdsrc, src, 98, "Error: Can't read from file", fddes,
+			fdsrc, buffer);
+
+	nwrite = write(fddes, buffer, nread);
 		if (nwrite != nread)
 			nwrite = -1;
 
