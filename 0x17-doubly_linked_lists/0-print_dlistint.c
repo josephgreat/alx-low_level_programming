@@ -13,13 +13,11 @@ size_t print_dlistint(const dlistint_t *h)
 	unsigned int listLen = 0;
 	const dlistint_t *current = h;
 
-	while (current->next != NULL)
+	while (current != NULL)
 	{
 		printf("%d\n", current->n);
 		current = current->next;
 		listLen++;
 	}
-	printf("%d\n", current->n);
-	listLen++;
 	return (listLen);
 }
